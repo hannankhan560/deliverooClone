@@ -11,11 +11,12 @@ const SearchBar = () => (
     <View style={styles.searchContainer}>
         <View style={styles.searchSection}>
             <View style={styles.searchField}>
-                <TextInput placeholder='Search' />
+                <Ionicons style={styles.searchIcon} name='search-outline' size={20}  />
+                <TextInput style={styles.input} placeholder='Restaurants, Groceries, Dishes' />
             </View>
             <Link href={'/'} asChild>
                 <TouchableOpacity style={styles.optionButton}>
-                    <Ionicons name="options-outline" size={20} color={Colors.primary}></Ionicons>
+                    <Ionicons name="options-outline" size={25} color={Colors.primary}></Ionicons>
                 </TouchableOpacity>
             </Link>
         </View>
@@ -86,7 +87,7 @@ const styles = StyleSheet.create ({
     },
     searchContainer :{
         backgroundColor: "#fff",
-        height: 40,
+        height: 60,
         paddingHorizontal: 20,
         alignItems: 'center',
         borderRadius: 10
@@ -95,11 +96,21 @@ const styles = StyleSheet.create ({
     searchSection: {
         flexDirection: 'row',
         gap: 20,
+        alignItems: 'center'
     },
     searchField: {
         flex: 1,
         backgroundColor: Colors.lightGrey,
-        paddingHorizontal: 10
+        paddingHorizontal: 10,
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    searchIcon: {
+        color: Colors.mediumDark
+    },
+    input: {
+        padding: 10,
+        color: Colors.mediumDark
     },
     optionButton: {
         paddingTop: 5,
