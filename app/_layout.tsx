@@ -1,6 +1,7 @@
 import {Stack } from 'expo-router';
 import CustomHeader from '../Components/CustomHeader';
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -15,13 +16,15 @@ export const unstable_settings = {
 export default function RootLayoutNav() {
 
   return (
-    <BottomSheetModalProvider>
-      <Stack>
-        <Stack.Screen name="index" options={{
-          header: () => <CustomHeader />,
-          
-        }} />
-      </Stack>
-    </BottomSheetModalProvider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <BottomSheetModalProvider>
+        <Stack>
+          <Stack.Screen name="index" options={{
+            header: () => <CustomHeader />,
+            
+          }} />
+        </Stack>
+      </BottomSheetModalProvider>
+    </GestureHandlerRootView>
   );
 }
